@@ -1,11 +1,14 @@
 package sample;
 
 import algorithms.ConvexHullAlgorithm;
+import algorithms.SortAlgorithm;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
 import model.Point;
+import model.Vector;
+import utilities.AngleComparator;
 import view.SpiralView;
 import view.View;
 
@@ -16,6 +19,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        System.out.println(new Vector(new Point(400, 300), new Point(200, 300)).xAxisAngle());
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Hello World");
         View.setStage(primaryStage);
@@ -27,9 +31,10 @@ public class Main extends Application {
         List<Point> points2 = points.stream().distinct().collect(Collectors.toList());
         System.out.println(points2.size());
         ConvexHullAlgorithm cha = new ConvexHullAlgorithm(points2);
+        SortAlgorithm sa = new SortAlgorithm(points2);
         SpiralView sv = new SpiralView(cha.findSpiral());
-        sv.drawConvexHulls(cha.getConvexHulls());
         sv.drawSpiral();
+        //sv.drawConvexHulls(cha.getConvexHulls());
     }
 
 

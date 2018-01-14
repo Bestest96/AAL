@@ -1,7 +1,7 @@
 package algorithms;
 
 import model.Point;
-import utilities.PointComparator;
+import utilities.AngleComparator;
 
 import java.util.*;
 
@@ -42,7 +42,7 @@ public class ConvexHullAlgorithm {
     private Stack<Point> calculateConvexHull(List<Point> points) {
         Point minPoint = findMinPoint(points);
         points.remove(minPoint);
-        points.sort(new PointComparator(minPoint));
+        points.sort(new AngleComparator(minPoint));
         /*if (originalPoints.size() < 3)
             throw new Exception("Oops");*/
         Stack<Point> convexHull = new Stack<>();
@@ -57,7 +57,7 @@ public class ConvexHullAlgorithm {
         return convexHull;
     }
 
-    public Stack<Stack<Point>> getConvexHulls() {
+    private Stack<Stack<Point>> getConvexHulls() {
         List<Point> points = new ArrayList<>(originalPoints);
         Stack<Stack<Point>> convexHulls = new Stack<>();
         while (points.size() >= 3) {
@@ -70,7 +70,7 @@ public class ConvexHullAlgorithm {
             Stack<Point> lastPoints = new Stack<>();
             Point lastMinPoint = findMinPoint(points);
             points.remove(lastMinPoint);
-            points.sort(new PointComparator(lastMinPoint));
+            points.sort(new AngleComparator(lastMinPoint));
             lastPoints.push(lastMinPoint);
             for (Point p : points)
                 lastPoints.push(p);
@@ -83,8 +83,23 @@ public class ConvexHullAlgorithm {
         Stack<Stack<Point>> convexHulls = getConvexHulls();
         while (!convexHulls.isEmpty()) {
             Stack<Point> actual = convexHulls.pop();
+            Queue<Point> actualRest = new ArrayDeque<>();
+            if (spiralPoints.size() > 1) {
+                Point lastPoint = spiralPoints.get(spiralPoints.size() - 1);
+                Point stlPoint = spiralPoints.get(spiralPoints.size() - 2);
+                while (!actual.isEmpty()) {
+                    Point toCheck = actual.peek();
+                    int check = (lastPoint.getX() - stlPoint.getX()) * (toCheck.getY() - stlPoint.getY()) - (toCheck.getX() - stlPoint.getX()) * (lastPoint.getY() - stlPoint.getY());
+                    if (check <= 0)
+                        break;
+                    else
+                        actualRest.add(actual.pop());
+                }
+            }
             while (!actual.isEmpty())
                 spiralPoints.add(actual.pop());
+            while (!actualRest.isEmpty())
+                spiralPoints.add(actualRest.remove());
         }
         return spiralPoints;
     }

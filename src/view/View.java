@@ -7,8 +7,8 @@ public class View {
 
     private static Stage stage;
 
-    private static final int WIDTH = 1280;
-    private static final int HEIGHT = 720;
+    private static final int WIDTH = 800;
+    private static final int HEIGHT = 600;
 
     public static Stage getStage() {
         return stage;

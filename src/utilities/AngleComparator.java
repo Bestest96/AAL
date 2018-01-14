@@ -1,41 +1,19 @@
 package utilities;
 
 import model.Point;
+import model.Vector;
 
 import java.util.Comparator;
 
-public class PointComparator implements Comparator<Point> {
+public class AngleComparator implements Comparator<Point> {
 
     private Point O;
 
-    private class Vector {
-        private int x;
-        private int y;
-
-        Vector(Point b, Point e) {
-            this.x = e.getX() - b.getX();
-            this.y = e.getY() - b.getY();
-        }
-
-        int squaredModulus() {
-            return x * x + y * y;
-        }
-
-        double xAxisAngle() {
-            double theta = Math.atan2(y, x);
-            return theta;
-        }
-    }
-
-    public PointComparator(Point O) {
+    public AngleComparator(Point O) {
         this.O = O;
     }
 
-    public double getAngle(Point p) {
-        Vector v = new Vector(O, p);
-        return v.xAxisAngle();
-    }
-
+    @Override
     public int compare(Point p1, Point p2) {
         Vector v1 = new Vector(O, p1);
         Vector v2 = new Vector(O, p2);

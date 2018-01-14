@@ -29,6 +29,9 @@ public class SpiralView {
             int startY = points.get(i).getY();
             int endX = points.get(i + 1).getX();
             int endY = points.get(i + 1).getY();
+            System.out.println(startX + " " + startY);
+            System.out.println(endX + " " + endY);
+            System.out.println("");
             Line line = new Line(startX, startY, endX, endY);
             line.setStroke(Color.RED);
             group.getChildren().add(line);
@@ -55,7 +58,6 @@ public class SpiralView {
                 group.getChildren().add(line);
             }
             Point p1 = ch.pop();
-            Point p2 = topElement;
             Line line = new Line(p1.getX(), p1.getY(), topElement.getX(), topElement.getY());
             group.getChildren().add(line);
         }

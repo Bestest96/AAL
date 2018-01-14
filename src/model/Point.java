@@ -29,7 +29,7 @@ public class Point {
         if (!(other instanceof Point))
             return false;
         Point p = (Point) other;
-        return (x == p.x || y == p.y);
+        return hashCode() == p.hashCode() && (x == p.x && y == p.y);
     }
 
     @Override
