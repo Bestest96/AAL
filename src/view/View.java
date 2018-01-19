@@ -7,8 +7,8 @@ public class View {
 
     private static Stage stage;
 
-    private static final int WIDTH = 800;
-    private static final int HEIGHT = 600;
+    private static final int WIDTH = 1440;
+    private static final int HEIGHT = 810;
 
     public static Stage getStage() {
         return stage;
@@ -23,6 +23,11 @@ public class View {
     }
 
     public static void show() {
+        stage.setResizable(false);
+        stage.setTitle("AAL");
+        stage.setAlwaysOnTop(true);
+        stage.setX(0);
+        stage.setY(0);
         stage.show();
     }
 
@@ -33,4 +38,5 @@ public class View {
     public static int getHEIGHT() {
         return HEIGHT;
     }
+
 }

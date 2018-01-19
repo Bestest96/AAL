@@ -17,9 +17,9 @@ public class ModulusComparator implements Comparator<Point> {
     public int compare(Point p1, Point p2) {
         Vector v1 = new Vector(O, p1);
         Vector v2 = new Vector(O, p2);
-        int squaredDistance1 = v1.squaredModulus();
-        int squaredDistance2 = v2.squaredModulus();
-        int compare = Integer.compare(squaredDistance1, squaredDistance2);
+        double squaredDistance1 = v1.squaredModulus();
+        double squaredDistance2 = v2.squaredModulus();
+        int compare = Double.compare(squaredDistance1, squaredDistance2);
         if (compare != 0)
             return compare;
         else {

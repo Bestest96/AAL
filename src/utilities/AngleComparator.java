@@ -23,9 +23,9 @@ public class AngleComparator implements Comparator<Point> {
         if (compare != 0)
             return compare;
         else {
-            int squaredDistance1 = v1.squaredModulus();
-            int squaredDistance2 = v2.squaredModulus();
-            return Integer.compare(squaredDistance1, squaredDistance2);
+            double squaredDistance1 = v1.squaredModulus();
+            double squaredDistance2 = v2.squaredModulus();
+            return Double.compare(squaredDistance1, squaredDistance2);
         }
     }
 }
