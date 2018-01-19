@@ -1,3 +1,9 @@
+/*
+    Łukasz Lepak, 277324
+    AAL 17Z, projekt
+    Tytuł projektu: Generacja spirali ze zbioru punktów
+    prowadzący: dr inż. Tomasz Gambin
+ */
 package utilities;
 
 import model.Point;

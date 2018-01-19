@@ -1,3 +1,9 @@
+/*
+    Łukasz Lepak, 277324
+    AAL 17Z, projekt
+    Tytuł projektu: Generacja spirali ze zbioru punktów
+    prowadzący: dr inż. Tomasz Gambin
+ */
 package utilities;
 
 import algorithms.ConvexHullAlgorithm;
@@ -36,7 +42,7 @@ public class Measurement {
             int n = startSize + i * step;
             double avgRRTime = i != tests / 2 ? measureAverageTime(rra, n, loops) : risingRadiusMedianTime;
             double q = i != tests / 2 ? (avgRRTime * risingRadiusMedian) / (risingRadiusComplexity(n) * risingRadiusMedianTime) : 1.0;
-            System.out.println("Data size: " + n + ", time: " + avgRRTime + ", q: " + q);
+            System.out.println("Data size: " + n + ", time(ms): " + avgRRTime + ", q: " + q);
         }
         System.out.println();
         double convexMedian = convexHullComplexity(medianN);
@@ -47,7 +53,7 @@ public class Measurement {
             int n = startSize + i * step;
             double avgCHTime = i != tests / 2 ? measureAverageTime(cha, n, loops) : convexMedianTime;
             double q = i != tests / 2 ? (avgCHTime * convexMedian) / (convexHullComplexity(n) * convexMedianTime) : 1.0;
-            System.out.println("Data size: " + n + ", time: " + avgCHTime + ", q: " + q);
+            System.out.println("Data size: " + n + ", time(ms): " + avgCHTime + ", q: " + q);
         }
         System.out.println();
         System.out.println("Measurements ended. Exiting.");
@@ -74,14 +80,15 @@ public class Measurement {
             cha.findSpiral(pg.generatePoints((i + 1) * 100));
             rra.findSpiral(pg.generatePoints((i + 1) * 100));
         }
+        System.out.println();
         System.out.println("Warm-up complete");
     }
 
-    private double convexHullComplexity(int n) {
+    private double convexHullComplexity(double n) {
         return n * n;
     }
 
-    private double risingRadiusComplexity(int n) {
+    private double risingRadiusComplexity(double n) {
         return n * Math.log(n);
     }
 }
