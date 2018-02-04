@@ -1,5 +1,5 @@
 /*
-    Łukasz Lepak, 277324
+    Lukasz Lepak, 277324
     AAL 17Z, projekt
     Tytuł projektu: Generacja spirali ze zbioru punktów
     prowadzący: dr inż. Tomasz Gambin
@@ -143,7 +143,6 @@ public class ArgumentParser {
         System.out.println("{tests} - and odd integer not less than one, even integers will be incremented to become odd");
         System.out.println("{iterations} - integer higher than zero");
         System.out.println("-si, -so - optional print to standard output of generated input/calculated output (for -m2)");
-
     }
 
     private int parseInt(String number, String begin) throws WrongArgumentException {

@@ -1,24 +1,17 @@
 /*
-    Łukasz Lepak, 277324
+    Lukasz Lepak, 277324
     AAL 17Z, projekt
     Tytuł projektu: Generacja spirali ze zbioru punktów
     prowadzący: dr inż. Tomasz Gambin
  */
 package algorithms;
 
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.Circle;
 import model.Point;
 import model.Vector;
-import utilities.AngleComparator;
 import utilities.ModulusComparator;
 import view.View;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class RisingRadiusAlgorithm implements SpiralAlgorithm {

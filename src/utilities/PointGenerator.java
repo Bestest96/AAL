@@ -1,5 +1,5 @@
 /*
-    Łukasz Lepak, 277324
+    Lukasz Lepak, 277324
     AAL 17Z, projekt
     Tytuł projektu: Generacja spirali ze zbioru punktów
     prowadzący: dr inż. Tomasz Gambin
@@ -9,7 +9,10 @@ package utilities;
 import model.Point;
 import view.View;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class PointGenerator {

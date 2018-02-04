@@ -1,5 +1,5 @@
 /*
-    Łukasz Lepak, 277324
+    Lukasz Lepak, 277324
     AAL 17Z, projekt
     Tytuł projektu: Generacja spirali ze zbioru punktów
     prowadzący: dr inż. Tomasz Gambin
@@ -85,7 +85,7 @@ public class Measurement {
     }
 
     private double convexHullComplexity(double n) {
-        return n * n;
+        return n * n * Math.log(n);
     }
 
     private double risingRadiusComplexity(double n) {

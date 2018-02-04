@@ -1,4 +1,4 @@
-Łukasz Lepak, 277324
+Lukasz Lepak, 277324
 AAL 17Z, projekt
 Tytuł projektu: Generacja spirali ze zbioru punktów
 prowadzący: dr inż. Tomasz Gambin
@@ -9,6 +9,12 @@ Należy skonstruować algorytm, który poprzez odpowiednie połączenie punktów
 która będzie łączyć wszystkie punkty oraz będzie skręcona tylko w jedną stronę 
 (brak kątów większych niż 180 stopni po wewnętrznej stronie spirali). 
 Porównać czas obliczeń i wyniki różnych metod.
+
+Kompilacja
+Program wymaga do kompilacji zainstalowanego środowiska Java. Przed kompilacją należy przejść do katalogu głównego z plikami źródłowymi programu. Kompilację przeprowadzamy komendą:
+javac AAL/AAL.main
+Komenda ta utworzy wymagane pliki .class, które później możemy uruchomić. 
+
 
 Wywołania programu udostępnione użytkownikowi(wpisywane z konsoli):
 1. java AAL.AAL -m1 -a{algorytm}

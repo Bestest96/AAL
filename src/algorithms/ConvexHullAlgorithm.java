@@ -1,5 +1,5 @@
 /*
-    Łukasz Lepak, 277324
+    Lukasz Lepak, 277324
     AAL 17Z, projekt
     Tytuł projektu: Generacja spirali ze zbioru punktów
     prowadzący: dr inż. Tomasz Gambin
@@ -7,7 +7,6 @@
 package algorithms;
 
 import model.Point;
-import model.Vector;
 import utilities.AngleComparator;
 
 import java.text.DecimalFormat;
@@ -69,7 +68,7 @@ public class ConvexHullAlgorithm implements SpiralAlgorithm {
         return convexHull;
     }
 
-    // return all convex hulls in a list of points, worst-case complexity is O(n^2)
+    // return all convex hulls in a list of points, worst-case complexity is O(n^2 * logn)
     public Stack<Stack<Point>> getConvexHulls(List<Point> points) {
         Stack<Stack<Point>> convexHulls = new Stack<>();
         while (points.size() >= 3) {
